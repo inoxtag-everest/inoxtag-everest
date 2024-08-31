@@ -1,200 +1,180 @@
-<html><head><base href="https://example.com/billetterie?type=vip">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Réservation Billet VIP - Projection Inoxtag Everest</title>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-    :root {
-        --primary-color: #ff4d4d;
-        --secondary-color: #2c3e50;
-        --accent-color: #f1c40f;
-        --bg-color: #ecf0f1;
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: 'Montserrat', sans-serif;
-        background-color: var(--bg-color);
-        color: var(--secondary-color);
-        line-height: 1.6;
-    }
-
-    header {
-        background-color: var(--primary-color);
-        color: white;
-        text-align: center;
-        padding: 1rem 0;
-        position: relative;
-        overflow: hidden;
-    }
-
-    header h1 {
-        font-size: 2rem;
-        position: relative;
-        z-index: 1;
-    }
-
-    main {
-        max-width: 800px;
-        margin: 2rem auto;
-        padding: 2rem;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-        color: var(--primary-color);
-        margin-bottom: 1rem;
-    }
-
-    .ticket-summary {
-        background-color: var(--bg-color);
-        border-radius: 5px;
-        padding: 1rem;
-        margin-bottom: 2rem;
-    }
-
-    .ticket-summary h3 {
-        color: var(--secondary-color);
-        margin-bottom: 0.5rem;
-    }
-
-    .ticket-summary p {
-        margin-bottom: 0.5rem;
-    }
-
-    .ticket-summary .price {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: var(--primary-color);
-    }
-
-    form {
-        display: grid;
-        gap: 1rem;
-    }
-
-    label {
-        font-weight: bold;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    select {
-        width: 100%;
-        padding: 0.5rem;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 1rem;
-    }
-
-    button {
-        background-color: var(--accent-color);
-        color: var(--secondary-color);
-        padding: 0.5rem 1rem;
-        border: none;
-        border-radius: 5px;
-        font-size: 1rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-        background-color: #e67e22;
-    }
-
-    footer {
-        background-color: var(--secondary-color);
-        color: white;
-        text-align: center;
-        padding: 1rem 0;
-        margin-top: 2rem;
-    }
-
-    @media (max-width: 768px) {
-        main {
-            padding: 1rem;
+<html><head><base href="https://example.com/billetterie?type=standard">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation Billet Standard - Projection Inoxtag Everest</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+    
+        :root {
+            --primary-color: #ff4d4d;
+            --secondary-color: #2c3e50;
+            --accent-color: #f1c40f;
+            --bg-color: #ecf0f1;
         }
-    }
-</style>
-</head>
-<body>
-    <header>
-        <h1>Réservation Billet VIP - Projection Inoxtag Everest</h1>
-    </header>
-
-    <main>
-        <section class="ticket-summary">
-            <h2>Récapitulatif de votre sélection</h2>
-            <h3>Billet VIP</h3>
-            <p>Accès à la projection + Goodies exclusifs</p>
-            <p class="price">35€</p>
-        </section>
-
-        <section>
-            <h2>Informations personnelles</h2>
-            <form id="booking-form">
-                <label for="name">Nom complet</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Adresse e-mail</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="phone">Numéro de téléphone</label>
-                <input type="tel" id="phone" name="phone" required>
-
-                <label for="quantity">Nombre de billets</label>
-                <select id="quantity" name="quantity" required>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-
-                <button type="submit">Procéder au paiement</button>
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--secondary-color);
+            line-height: 1.6;
+        }
+    
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+    
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    
+        h1, h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+    
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+    
+        label {
+            font-weight: bold;
+        }
+    
+        input, select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        .btn:hover {
+            background-color: #e67e22;
+        }
+    
+        .ticket-summary {
+            background-color: var(--bg-color);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+    
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    
+        @media (max-width: 768px) {
+            main {
+                padding: 1rem;
+            }
+        }
+    </style>
+    </head>
+    <body>
+        <header>
+            <h1>Réservation Billet VIP</h1>
+        </header>
+    
+        <main>
+            <h2>Détails de la réservation</h2>
+            <form id="reservationForm">
+                <div>
+                    <label for="name">Nom complet</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="quantity">Nombre de billets</label>
+                    <select id="quantity" name="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="ticket-summary">
+                    <h3>Résumé de la commande</h3>
+                    <p>Type de billet: VIP</p>
+                    <p>Prix unitaire: 35€</p>
+                    <p>Total: <span id="totalPrice">35€</span></p>
+                </div>
+                <button type="submit" class="btn">Confirmer la réservation</button>
             </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 Projection Inoxtag Everest. Tous droits réservés.</p>
-    </footer>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('booking-form');
-        const quantitySelect = document.getElementById('quantity');
-        const priceElement = document.querySelector('.price');
-        const basePrice = 35;
-
-        quantitySelect.addEventListener('change', function() {
-            const quantity = parseInt(this.value);
-            const totalPrice = basePrice * quantity;
-            priceElement.textContent = `${totalPrice}€`;
+        </main>
+    
+        <footer>
+            <p>&copy; 2024 Projection Inoxtag Everest. Tous droits réservés.</p>
+        </footer>
+    
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('reservationForm');
+            const quantitySelect = document.getElementById('quantity');
+            const totalPriceSpan = document.getElementById('totalPrice');
+    
+            function updateTotalPrice() {
+                const quantity = parseInt(quantitySelect.value);
+                const unitPrice = 35;
+                const totalPrice = quantity * unitPrice;
+                totalPriceSpan.textContent = `${totalPrice}€`;
+            }
+    
+            quantitySelect.addEventListener('change', updateTotalPrice);
+    
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const quantity = quantitySelect.value;
+    
+                alert(`Merci pour votre réservation, ${name}!
+                Détails de la commande:
+                - Email: ${email}
+                - Nombre de billets: ${quantity}
+                - Total: ${totalPriceSpan.textContent}
+                
+                Un email de confirmation vous sera envoyé prochainement.`);
+    
+                // Ici, vous pourriez ajouter du code pour envoyer les données à un serveur
+                // ou rediriger l'utilisateur vers une page de paiement.
+            });
         });
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(form);
-            const bookingData = Object.fromEntries(formData.entries());
-
-            // Simuler l'envoi des données à un serveur
-            console.log('Données de réservation:', bookingData);
-
-            // Rediriger vers une page de confirmation (simulation)
-            alert('Merci pour votre réservation! Vous allez être redirigé vers notre page de paiement sécurisée.');
-            window.location.href = 'https://example.com/payment';
-        });
-    });
-    </script>
-</body>
-</html>
+        </script>
+    </body>
+    </html>
