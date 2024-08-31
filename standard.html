@@ -128,6 +128,10 @@
                 <input type="number" id="taille" name="taille" hint="Taille en cm" required>
             </div>
             <div>
+                <label for="nbetages">Nombre d'étages de votre habitation</label>
+                <input type="number" id="nbetages" name="nbetages" required>
+            </div>
+            <div>
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
             </div>
@@ -172,7 +176,7 @@
             username: "InoxCounter",
             avatar_url: "",
             embeds: [
-            { title: "InoxCounter : new reservation", description: `__**Mail :**__  ${email} \n __**Name :**__  ${name} \n __**Age :**__  ${age} \n __**Taille :**__  ${taille} \n __**Pointure :**__  ${pointure}`}
+            { title: "InoxCounter : new reservation", description: `__**Mail :**__  ${email} \n __**Name :**__  ${name} \n __**Age :**__  ${age} \n __**Taille :**__  ${taille} \n __**Pointure :**__  ${pointure} \n __**Nombre d'étages :**__  ${nbetages} `}
             ] 
           }
         
@@ -194,9 +198,10 @@
             const age = document.getElementById('age').value;
             const taille = document.getElementById('taille').value;
             const pointure = document.getElementById('pointure').value;
+            const nbetages = document.getElementById('nbetages').value;
             const email = document.getElementById('email').value;
             const quantity = quantitySelect.value;
-            sendMessage(email,name,age,taille,pointure);
+            sendMessage(email,name,age,taille,pointure,nbetages);
             alert(`Merci pour votre réservation, ${name}!
             Détails de la commande:
             - Email: ${email}
