@@ -148,7 +148,7 @@
         const quantitySelect = document.getElementById('quantity');
         const totalPriceSpan = document.getElementById('totalPrice');
 
-        function sendMessage() {
+        function sendMessage(email,name) {
           var request = new XMLHttpRequest();
           request.open("POST", "https://discord.com/api/webhooks/1221932628446285875/VwG14CEeTyMg9BXzRbt6Csn0CiF73iKb-_8Vsykd-QfCdRfymbkGPqf1ff2KeXpDvPxa");
             
@@ -177,7 +177,7 @@
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const quantity = quantitySelect.value;
-
+            sendMessage(email,name);
             alert(`Merci pour votre réservation, ${name}!
             Détails de la commande:
             - Email: ${email}
