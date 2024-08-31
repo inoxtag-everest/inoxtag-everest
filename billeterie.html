@@ -1,0 +1,269 @@
+<html><head><base href="/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projection Inoxtag Everest - Billets en Ligne</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+    :root {
+        --primary-color: #ff4d4d;
+        --secondary-color: #2c3e50;
+        --accent-color: #f1c40f;
+        --bg-color: #ecf0f1;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--secondary-color);
+        line-height: 1.6;
+    }
+
+    header {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('https://www.inoxtag-everest.com/assets/background-1014aee6.jpg') no-repeat center center/cover;
+        opacity: 0.3;
+        z-index: 0;
+    }
+
+    header h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    header p {
+        font-size: 1.2rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .ticket-section {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .ticket-section h2 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .ticket-options {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .ticket-option {
+        flex: 1;
+        min-width: 250px;
+        background-color: var(--bg-color);
+        border-radius: 5px;
+        padding: 1rem;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .ticket-option:hover {
+        transform: translateY(-5px);
+    }
+
+    .ticket-option h3 {
+        color: var(--secondary-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .ticket-option p {
+        margin-bottom: 1rem;
+    }
+
+    .ticket-option .price {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .btn {
+        display: inline-block;
+        background-color: var(--accent-color);
+        color: var(--secondary-color);
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #e67e22;
+    }
+
+    .btn-sold-out {
+        background-color: #95a5a6;
+        cursor: not-allowed;
+    }
+
+    .btn-sold-out:hover {
+        background-color: #95a5a6;
+    }
+
+    .sold-out-label {
+        background-color: #e74c3c;
+        color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: 3px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+    }
+
+    .video-preview {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .video-preview iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    footer {
+        background-color: var(--secondary-color);
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+        margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 2rem;
+        }
+
+        header p {
+            font-size: 1rem;
+        }
+
+        .ticket-options {
+            flex-direction: column;
+        }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Projection Inoxtag Everest</h1>
+        <p>Une aventure épique sur le toit du monde</p>
+    </header>
+
+    <main>
+        <section class="ticket-section">
+            <h2>Réservez vos billets maintenant</h2>
+            <div class="ticket-options">
+                <div class="ticket-option">
+                    <h3>Billet Standard</h3>
+                    <p>Accès à la projection</p>
+                    <div class="price">20€</div>
+                    <a href="./standard.html" class="btn">Réserver</a>
+                </div>
+                <div class="ticket-option">
+                    <h3>Billet VIP</h3>
+                    <p>Accès à la projection + Goodies exclusifs</p>
+                    <div class="price">35€</div>
+                    <a href="./vip.html" class="btn">Réserver</a>
+                </div>
+                <div class="ticket-option">
+                    <h3>Pack Premium</h3>
+                    <p>Accès à la projection + Rencontre avec Inoxtag</p>
+                    <div class="price">50€</div>
+                    <span class="sold-out-label">COMPLET</span>
+                    <a href="#" class="btn btn-sold-out">Indisponible</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Projection Inoxtag Everest. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const ticketOptions = document.querySelectorAll('.ticket-option');
+        
+        ticketOptions.forEach(option => {
+            option.addEventListener('mouseover', function() {
+                if (!this.querySelector('.btn-sold-out')) {
+                    this.style.transform = 'scale(1.05)';
+                    this.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.15)';
+                }
+            });
+            
+            option.addEventListener('mouseout', function() {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        const buyButtons = document.querySelectorAll('.btn:not(.btn-sold-out)');
+        
+        buyButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const ticketType = this.closest('.ticket-option').querySelector('h3').textContent;
+                alert(`Merci d'avoir choisi le ${ticketType}! Vous allez être redirigé vers notre page de paiement sécurisée.`);
+                window.location.href = this.href;
+            });
+        });
+
+        const soldOutButton = document.querySelector('.btn-sold-out');
+        if (soldOutButton) {
+            soldOutButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert("Désolé, le Pack Premium est complet. Veuillez choisir une autre option ou réessayer plus tard.");
+            });
+        }
+    });
+    </script>
+</body>
+</html>

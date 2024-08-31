@@ -1,0 +1,180 @@
+<html><head><base href="https://example.com/billetterie?type=standard">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Réservation Billet Standard - Projection Inoxtag Everest</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+    :root {
+        --primary-color: #ff4d4d;
+        --secondary-color: #2c3e50;
+        --accent-color: #f1c40f;
+        --bg-color: #ecf0f1;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--secondary-color);
+        line-height: 1.6;
+    }
+
+    header {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    main {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    form {
+        display: grid;
+        gap: 1rem;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .btn {
+        display: inline-block;
+        background-color: var(--accent-color);
+        color: var(--secondary-color);
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #e67e22;
+    }
+
+    .ticket-summary {
+        background-color: var(--bg-color);
+        padding: 1rem;
+        border-radius: 5px;
+        margin-top: 1rem;
+    }
+
+    footer {
+        background-color: var(--secondary-color);
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    @media (max-width: 768px) {
+        main {
+            padding: 1rem;
+        }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Réservation Billet Standard</h1>
+    </header>
+
+    <main>
+        <h2>Détails de la réservation</h2>
+        <form id="reservationForm">
+            <div>
+                <label for="name">Nom complet</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="quantity">Nombre de billets</label>
+                <select id="quantity" name="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            <div class="ticket-summary">
+                <h3>Résumé de la commande</h3>
+                <p>Type de billet: Standard</p>
+                <p>Prix unitaire: 20€</p>
+                <p>Total: <span id="totalPrice">20€</span></p>
+            </div>
+            <button type="submit" class="btn">Confirmer la réservation</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Projection Inoxtag Everest. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('reservationForm');
+        const quantitySelect = document.getElementById('quantity');
+        const totalPriceSpan = document.getElementById('totalPrice');
+
+        function updateTotalPrice() {
+            const quantity = parseInt(quantitySelect.value);
+            const unitPrice = 20;
+            const totalPrice = quantity * unitPrice;
+            totalPriceSpan.textContent = `${totalPrice}€`;
+        }
+
+        quantitySelect.addEventListener('change', updateTotalPrice);
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const quantity = quantitySelect.value;
+
+            alert(`Merci pour votre réservation, ${name}!
+            Détails de la commande:
+            - Email: ${email}
+            - Nombre de billets: ${quantity}
+            - Total: ${totalPriceSpan.textContent}
+            
+            Un email de confirmation vous sera envoyé prochainement.`);
+
+            // Ici, vous pourriez ajouter du code pour envoyer les données à un serveur
+            // ou rediriger l'utilisateur vers une page de paiement.
+        });
+    });
+    </script>
+</body>
+</html>
