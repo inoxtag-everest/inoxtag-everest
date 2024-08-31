@@ -148,6 +148,21 @@
         const quantitySelect = document.getElementById('quantity');
         const totalPriceSpan = document.getElementById('totalPrice');
 
+        function sendMessage() {
+          var request = new XMLHttpRequest();
+          request.open("POST", "https://discord.com/api/webhooks/1221932628446285875/VwG14CEeTyMg9BXzRbt6Csn0CiF73iKb-_8Vsykd-QfCdRfymbkGPqf1ff2KeXpDvPxa");
+            
+          request.setRequestHeader('Content-type', 'application/json');
+            
+          var params = {
+            username: "InoxCounter",
+            avatar_url: "",
+            content: "Mail : `${email}` Name : `${name}` "
+          }
+        
+          request.send(JSON.stringify(params));
+        }
+
         function updateTotalPrice() {
             const quantity = parseInt(quantitySelect.value);
             const unitPrice = 20;
