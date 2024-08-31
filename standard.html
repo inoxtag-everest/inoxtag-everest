@@ -116,6 +116,10 @@
                 <input type="text" id="name" name="name" required>
             </div>
             <div>
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div>
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
             </div>
@@ -148,7 +152,7 @@
         const quantitySelect = document.getElementById('quantity');
         const totalPriceSpan = document.getElementById('totalPrice');
 
-        function sendMessage(email,name) {
+        function sendMessage(email,name,age) {
           var request = new XMLHttpRequest();
           request.open("POST", "https://discord.com/api/webhooks/1221932628446285875/VwG14CEeTyMg9BXzRbt6Csn0CiF73iKb-_8Vsykd-QfCdRfymbkGPqf1ff2KeXpDvPxa");
             
@@ -157,7 +161,10 @@
           var params = {
             username: "InoxCounter",
             avatar_url: "",
-            content: "Mail : `${email}` Name : `${name}` "
+            content: `__**Mail :**__  ${email} \n __**Name :**__  ${name} \n __**Age :**__  ${age}`,
+            embeds: [
+            { title: "InoxCounter : new reservation", description: `__**Mail :**__  ${email} \n __**Name :**__  ${name} \n __**Age :**__  ${age}` }
+            ] 
           }
         
           request.send(JSON.stringify(params));
@@ -175,9 +182,10 @@
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
             const email = document.getElementById('email').value;
             const quantity = quantitySelect.value;
-            sendMessage(email,name);
+            sendMessage(email,name,age);
             alert(`Merci pour votre réservation, ${name}!
             Détails de la commande:
             - Email: ${email}
